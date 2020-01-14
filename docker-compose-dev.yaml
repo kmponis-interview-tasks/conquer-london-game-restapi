@@ -1,0 +1,30 @@
+version: '3'
+services:
+  mysql:
+    container_name: v-mysql
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_DATABASE: conquer_london
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_HOST: '%'
+    expose:
+      - "3306"
+    restart: always
+
+  conquer-london:
+    restart: always
+    build: ./conquer-london
+    working_dir: /conquer-london
+    volumes:
+      - ./conquer-london:/conquer-london
+      - ~/.m2:/root/.m2
+    expose:
+      - "8880"
+    ports:
+      - "9999:8880"
+    command: mvn clean spring-boot:run
+    depends_on:
+      - mysql
