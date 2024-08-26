@@ -23,7 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<version.java>1.8</version.java>
-		<version.swagger>2.9.2</version.swagger>
+		<version.swagger>2.10.0</version.swagger>
 		<version.geocalc>0.5.8</version.geocalc>
 		<version.json.simple>1.1.1</version.json.simple>
 		<version.surefire>2.19</version.surefire>
